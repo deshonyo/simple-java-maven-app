@@ -12,9 +12,8 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'mvn -DartifactId=my-app-test'
+                sh 'mvn jar:jar -Djar.finalName=custom-jar-name'
                 sh 'mvn -B -DskipTests clean package'
-                sh '${NAME}'
             }
         }
     }
