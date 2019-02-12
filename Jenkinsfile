@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'mvn jar:jar -Djar.finalName=custom-jar-name'
+                sh 'mvn jar:jar -Djar.artifactId=custom-jar-name'
                 sh 'mvn -B -DskipTests clean package'
             }
         }
