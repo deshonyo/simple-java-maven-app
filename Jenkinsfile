@@ -15,6 +15,8 @@ pipeline {
             steps {
                 sh 'mvn test'
             }
+            sh 'pwd'
+            sh 'docker -v'
             post {
                 always {
                     junit 'target/surefire-reports/*.xml'
